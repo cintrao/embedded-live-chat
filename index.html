@@ -50,17 +50,17 @@
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.init(
-                    'https://sohohouse--UAT.my.salesforce.com',
-                    'https://uat-sohohouse.cs80.force.com/livechat',
+                    'https://sohohouse.my.salesforce.com',
+                    'https://sohohouse.secure.force.com/livechat',
                     gslbBaseURL,
-                    '00D2500000099Z9',
+                    '00DD0000000oXXu',
                     'Retail_Live_Chat',
                     {
-                        baseLiveAgentContentURL: 'https://c.la1-c1cs-lo2.salesforceliveagent.com/content',
-                        deploymentId: '5722500000001Vi',
-                        buttonId: '5732500000001Rc',
-                        baseLiveAgentURL: 'https://d.la1-c1cs-lo2.salesforceliveagent.com/chat',
-                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2500000000eQEAQ_1825f55b8ee',
+                        baseLiveAgentContentURL: 'https://c.la1-c1-lo2.salesforceliveagent.com/content',
+                        deploymentId: '5723z000000TaoS',
+                        buttonId: '5733z000000TbWZ',
+                        baseLiveAgentURL: 'https://d.la1-c1-lo2.salesforceliveagent.com/chat',
+                        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3z000000TV2AEAW_182692e8d62',
                         isOfflineSupportEnabled: false
                     }
                 );
@@ -68,7 +68,7 @@
 
             if (!window.embedded_svc) {
                 var s = document.createElement('script');
-                s.setAttribute('src', 'https://sohohouse--UAT.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.setAttribute('src', 'https://sohohouse.my.salesforce.com/embeddedservice/5.0/esw.min.js');
                 s.onload = function() {
                     initESW(null);
                 };
