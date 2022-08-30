@@ -6,6 +6,10 @@
     </head>
     <body>
 
+        <a id="liveagent_button_online_5733L00000000IG" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5733L00000000IG')">
+            Online Chat Content
+        </a
+
          <!-- Offline Chat Content -->
         <div  id="liveagent_button_offline_5733L00000000IG" style="display: none;">
            <div class="embeddedServiceHelpButton" style="position: absolute; z-index: 1000;">
@@ -38,6 +42,7 @@
             // Show offline button
             if (!window._laq) { window._laq = []; }
             window._laq.push(function(){
+                liveagent.showWhenOnline('5733L00000000IG', document.getElementById('liveagent_button_online_5733L00000000IG'));
                 liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
             });
 
