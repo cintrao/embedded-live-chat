@@ -24,7 +24,7 @@
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
                 embedded_svc.settings.defaultMinimizedText = 'Chat with our team'; //(Defaults to Chat with an Expert)
-                embedded_svc.settings.disabledMinimizedText = 'Chat with our team'; //(Defaults to Agent Offline)
+                embedded_svc.settings.disabledMinimizedText = 'Chat Team Offline'; //(Defaults to Agent Offline)
 
                 //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
                 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
@@ -36,12 +36,12 @@
                 //};
 
                 //Sets the auto-population of pre-chat form fields
-                embedded_svc.settings.prepopulatedPrechatFields = {
-                    FirstName: "Davide",
-                    LastName: "Cintrao",
-                    Email: "davide.cintrao@sohohouse.com",
-                    Subject: "Test"
-                }; 
+                // embedded_svc.settings.prepopulatedPrechatFields = {
+                //     FirstName: "Davide",
+                //     LastName: "Cintrao",
+                //     Email: "davide.cintrao@sohohouse.com",
+                //     Subject: "Test"
+                // }; 
 
                 //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
                 //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
@@ -61,7 +61,7 @@
                         buttonId: '5733L00000000IG',
                         baseLiveAgentURL: 'https://d.la1-c1cs-lo3.salesforceliveagent.com/chat',
                         eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3L0000008OXAUA2_181a963b989',
-                        isOfflineSupportEnabled: true
+                        isOfflineSupportEnabled: false
                     }
                 );
             };
