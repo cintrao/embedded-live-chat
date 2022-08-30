@@ -6,6 +6,18 @@
     </head>
     <body>
 
+         <!-- Offline Chat Content -->
+        <div  id="liveagent_button_offline_5733L00000000IG" style="display: none;">
+           <div class="embeddedServiceHelpButton">
+                <div class="helpButton">
+                    <button class="uiButton helpButtonDisabled" href="javascript:void(0)">
+                        <span class="embeddedServiceIcon" aria-hidden="true" style="display: inline-block;"></span>
+                        <span class="helpButtonLabel" id="helpButtonSpan" aria-live="polite" aria-atomic="true">
+                        <span class="assistiveText">Live chat Test:</span><span class="message">Chat Team Offline Test</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <style type='text/css'>
             .embeddedServiceHelpButton .helpButton .uiButton {
@@ -18,7 +30,16 @@
         </style>
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+
         <script type='text/javascript'>
+
+            // Show offline button
+            if (!window._laq) { window._laq = []; }
+            window._laq.push(function(){
+                liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
+            });
+
+
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
