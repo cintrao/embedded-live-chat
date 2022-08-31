@@ -5,22 +5,47 @@
         <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
     </head>
     <body>
-
-        <!-- <a id="liveagent_button_online_5733L00000000IG" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5733L00000000IG')">
-            Online Chat Content
-        </a -->
-
          <!-- Offline Chat Content -->
         <div  id="liveagent_button_offline_5733L00000000IG" style="display: none;">
            <div class="embeddedServiceHelpButton" style="position: absolute; z-index: 1000;">
-                <div class="helpButton">
+                <div class="helpButton" onclick="openOfflineForm()">
                     <button class="helpButtonEnabled uiButton" href="javascript:void(0)">
                         <span class="embeddedServiceIcon" aria-hidden="true" data-icon=""></span>
                         <span class="helpButtonLabel" id="helpButtonSpan" aria-live="polite" aria-atomic="true">
                             <span class="assistiveText">Live chat:</span>
-                            <span class="message">Chat with our team offline</span>
+                            <span class="message"></span>
                         </span>
                     </button>
+                </div>
+                <div id="offlineForm">
+
+                    <div id="offlineFormHeader">
+                        <div id="closeOfflineFormBtn" onclick="closeOfflineForm()">X</div>
+                    </div>
+                    
+                    <form action="https://sohohouse--devdcc.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+                        <input type=hidden name="orgid" value="00D3L0000008aiD">
+                        <input type=hidden name="retURL" value="https://www.sohohouse.com/">
+
+                        <div style="margin-bottom: 20px;">
+                            Our chat team is online between 8am and 8pm GMT. Please send us a message and we'll get back to you as soon as possible.
+                        </div>
+
+                        <input type="text" id="name" name="name" style="display: none;" />
+                        <label for="firstName">First Name</label><input  id="firstName" maxlength="80" name="firstName" size="20" type="text" /><br>
+                        <label for="lastName">Last Name</label><input  id="lastName" maxlength="80" name="lastName" size="20" type="text" /><br>
+
+                        <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+                        <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+                        <label for="description">Include a message</label><textarea name="description"></textarea><br>
+
+                        <input type="hidden"  id="external" name="external" value="1" /><br>
+
+                        <input type="submit" name="submit" onClick="processForm(this.form)">
+                    </form>
                 </div>
             </div>
         </div>
@@ -29,9 +54,35 @@
             .embeddedServiceHelpButton .helpButton .uiButton {
                 background-color: #005290;
                 font-family: "Arial", sans-serif;
+                cursor: pointer !important;
             }
             .embeddedServiceHelpButton .helpButton .uiButton:focus {
                 outline: 1px solid #005290;
+            }
+
+            #offlineForm {
+                position: fixed;
+                width: 350px;
+                right: 0;
+                bottom: 0;
+                background: #C0C0C0;
+                display: none;
+            }
+
+            #offlineForm form {
+                padding: 10px;
+            }
+
+            #offlineFormHeader {
+                margin-bottom: 30px;
+            }
+
+            #closeOfflineFormBtn {
+                cursor: pointer;
+                position: fixed;
+                margin: 10px;
+                width: 10px;
+                right:10px;
             }
         </style>
 
@@ -43,7 +94,6 @@
             // Show offline button
             if (!window._laq) { window._laq = []; }
             window._laq.push(function(){
-                // liveagent.showWhenOnline('5733L00000000IG', document.getElementById('liveagent_button_online_5733L00000000IG'));
                 liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
             });
             liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
@@ -52,30 +102,8 @@
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
                 embedded_svc.settings.defaultMinimizedText = 'Chat with our team'; //(Defaults to Chat with an Expert)
-                embedded_svc.settings.disabledMinimizedText = 'Chat Team Offline'; //(Defaults to Agent Offline)
-
-                //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-                //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-                // Settings for Chat
-                //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-                    // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-                    // Returns a valid button ID.
-                //};
-
-                //Sets the auto-population of pre-chat form fields
-                // embedded_svc.settings.prepopulatedPrechatFields = {
-                //     FirstName: "Davide",
-                //     LastName: "Cintrao",
-                //     Email: "davide.cintrao@sohohouse.com",
-                //     Subject: "Test"
-                // }; 
-
-                //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-                //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+                embedded_svc.settings.disabledMinimizedText = 'Chat with our team'; //(Defaults to Agent Offline)
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
@@ -105,6 +133,21 @@
                 document.body.appendChild(s);
             } else {
                 initESW('https://service.force.com');
+            }
+        </script>
+
+        <script type="text/javascript">
+            function openOfflineForm() {
+               document.getElementById('offlineForm').style.display = "block";
+            }
+
+            function closeOfflineForm() {
+               document.getElementById('offlineForm').style.display = "none";
+            }
+
+            function processForm(form) {
+                form.name.value = form.firstName.value + ' ' + form.lastName.value;
+                console.log(form.name.value);
             }
         </script>
     </body>
