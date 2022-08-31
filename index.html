@@ -8,15 +8,6 @@
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript'>
-
-            // Show offline button
-            if (!window._laq) { window._laq = []; }
-            window._laq.push(function(){
-                liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
-            });
-            liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
-
-
             var initESW = function(gslbBaseURL) {
                 embedded_svc.settings.displayHelpButton = true; //Or false
                 embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -51,21 +42,6 @@
                 document.body.appendChild(s);
             } else {
                 initESW('https://service.force.com');
-            }
-        </script>
-
-        <script type="text/javascript">
-            function openOfflineForm() {
-               document.getElementById('offlineForm').style.display = "block";
-            }
-
-            function closeOfflineForm() {
-               document.getElementById('offlineForm').style.display = "none";
-            }
-
-            function processForm(form) {
-                form.name.value = form.firstName.value + ' ' + form.lastName.value;
-                console.log(form.name.value);
             }
         </script>
 
@@ -159,6 +135,19 @@
             });
 
             liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
+
+            function openOfflineForm() {
+               document.getElementById('offlineForm').style.display = "block";
+            }
+
+            function closeOfflineForm() {
+               document.getElementById('offlineForm').style.display = "none";
+            }
+
+            function processForm(form) {
+                form.name.value = form.firstName.value + ' ' + form.lastName.value;
+                console.log(form.name.value);
+            }
         </script>
     </body>
 </html>
