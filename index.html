@@ -6,37 +6,21 @@
     </head>
     <body>
 
-        <!-- <a id="liveagent_button_online_5733L00000000IG" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5733L00000000IG')">
-            Online Chat Content
-        </a -->
-
-         <!-- Offline Chat Content -->
-        <div  id="liveagent_button_offline_5733L00000000IG" style="display: none;">
-           <div class="embeddedServiceHelpButton" style="position: absolute; z-index: 1000;">
-                <div class="helpButton">
-                    <button class="helpButtonEnabled uiButton" href="javascript:void(0)">
-                        <span class="embeddedServiceIcon" aria-hidden="true" data-icon=""></span>
-                        <span class="helpButtonLabel" id="helpButtonSpan" aria-live="polite" aria-atomic="true">
-                            <span class="assistiveText">Live chat:</span>
-                            <span class="message">Chat with our team offline</span>
-                        </span>
-                    </button>
-                </div>
-            </div>
+        <div id="liveagent_button_offline_5733L00000000IG" style="display: none;">
+            Offline Chat Content
         </div>
 
         <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
         <script type='text/javascript' src='https://c.la1-c1cs-lo3.salesforceliveagent.com/content/g/js/56.0/deployment.js'></script>
 
-        <script type='text/javascript'>
-
-            // Show offline button
+        <script type="text/javascript">
             if (!window._laq) { window._laq = []; }
             window._laq.push(function(){
                 // liveagent.showWhenOnline('5733L00000000IG', document.getElementById('liveagent_button_online_5733L00000000IG'));
                 liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
             });
-            liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD'); 
+
+            liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
         </script>
     </body>
 </html>
