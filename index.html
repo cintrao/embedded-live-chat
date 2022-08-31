@@ -5,12 +5,16 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript' src='https://c.la1-c1cs-lo3.salesforceliveagent.com/content/g/js/56.0/deployment.js'></script>
     <script type='text/javascript'>
-        liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
+        if (window.liveagent) { 
+            liveagent.init('https://d.la1-c1cs-lo3.salesforceliveagent.com/chat', '5723L00000000JH', '00D3L0000008aiD');
+        };
     </script>
 <script type="text/javascript">
     if (!window._laq) { window._laq = []; }
-    window._laq.push(function(){
-        // liveagent.showWhenOnline('5733L00000000IG', document.getElementById('liveagent_button_online_5733L00000000IG'));
-        liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
-    });
+    if (window.liveagent) { 
+        window._laq.push(function(){
+            // liveagent.showWhenOnline('5733L00000000IG', document.getElementById('liveagent_button_online_5733L00000000IG'));
+            liveagent.showWhenOffline('5733L00000000IG', document.getElementById('liveagent_button_offline_5733L00000000IG'));
+        });
+    }
 </script>
