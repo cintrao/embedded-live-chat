@@ -9,8 +9,8 @@
         <div  id="liveagent_button_offline_5733L00000000IG" style="display: none;">
            <div id="offlineContent">
 
-                <div id="offlineButton" onclick="openOfflineForm()">
-                    <button href="javascript:void(0)">
+                <div onclick="openOfflineForm()">
+                    <button id="offlineButton" href="javascript:void(0)">
                         <span class="message">Chat with our team</span>
                     </button>
                 </div>
@@ -44,6 +44,18 @@
 
                         <input type="submit" name="submit" onClick="processForm(this.form)">
                     </form>
+                </div>
+            </div>
+
+            <div class="embeddedServiceHelpButton" style="position: absolute; z-index: 999;">
+                <div class="helpButton">
+                    <button class="helpButtonEnabled uiButton" href="javascript:void(0)">
+                        <span class="embeddedServiceIcon" aria-hidden="true" data-icon=""></span>
+                        <span class="helpButtonLabel" id="helpButtonSpan" aria-live="polite" aria-atomic="true">
+                            <span class="assistiveText">Live chat:</span>
+                            <span class="message">Chat with our team offline</span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
