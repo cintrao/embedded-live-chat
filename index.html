@@ -50,8 +50,8 @@
                 embedded_svc.settings.entryFeature = 'LiveAgent';
 
                 embedded_svc.init(
-                    'https://sohohouse--UAT.my.salesforce.com',
-                    'https://uat-sohohouse.cs80.force.com/livechat',
+                    'https://sohohouse--uat.sandbox.my.salesforce.com',
+                    'https://sohohouse--uat.sandbox.my.salesforce-sites.com/livechat',
                     gslbBaseURL,
                     '00D2500000099Z9',
                     'Retail_Live_Chat',
@@ -68,7 +68,7 @@
 
             if (!window.embedded_svc) {
                 var s = document.createElement('script');
-                s.setAttribute('src', 'https://sohohouse--UAT.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+                s.setAttribute('src', 'https://sohohouse--uat.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
                 s.onload = function() {
                     initESW(null);
                 };
